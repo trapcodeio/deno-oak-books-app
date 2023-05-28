@@ -7,6 +7,7 @@ const client = new Client({
     database: env.POSTGRES_DB,
     hostname: env.POSTGRES_HOST,
     port: env.POSTGRES_PORT,
+    password: env.POSTGRES_PASSWORD,
 });
 
 try {
@@ -15,7 +16,7 @@ try {
 } catch (error) {
     // log error
     console.log(`Failed to connect to database [${env.POSTGRES_HOST}]`);
-    console.log(error.message);
+    console.log(error);
 
     // exit process
     Deno.exit(1);

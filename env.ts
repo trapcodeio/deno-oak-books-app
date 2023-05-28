@@ -10,7 +10,6 @@ export const env = {
 
     DENO_ENV: Deno.env.get("DENO_ENV") || "development",
 
-    APP_HOST: Deno.env.get("APP_HOST") || "localhost",
     APP_PORT: Number(Deno.env.get("APP_PORT") || 9000),
 
     POSTGRES_HOST: Deno.env.get("POSTGRES_HOST") || "localhost",

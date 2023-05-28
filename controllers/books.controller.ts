@@ -1,8 +1,5 @@
-import { RouterContext } from "oak";
-import {
-  BookForm,
-  BooksRepository,
-} from "../database/repositories/books.repo.ts";
+import {RouterContext} from "oak";
+import {BookForm, BooksRepository,} from "../database/repositories/books.repo.ts";
 
 /**
  * Index - GET /
@@ -30,11 +27,9 @@ export async function create(ctx: RouterContext<string>) {
   // validate book form data
   await BooksRepository.validate(body);
 
-  // create book
-  const book = await BooksRepository.create(body);
 
   // send response
-  ctx.response.body = book;
+  ctx.response.body = await BooksRepository.create(body);
 }
 
 /**
@@ -58,11 +53,8 @@ export async function update(ctx: RouterContext<string>) {
   // validate book form data
   await BooksRepository.validate(body);
 
-  // update book
-  const updatedBook = await BooksRepository.update(book.id, body);
-
   // send response
-  ctx.response.body = updatedBook;
+  ctx.response.body = await BooksRepository.update(book.id, body);
 }
 
 /**

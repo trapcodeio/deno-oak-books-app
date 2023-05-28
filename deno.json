@@ -5,7 +5,7 @@
     "dotenv": "https://deno.land/x/dotenv/mod.ts"
   },
   "tasks": {
-    "dev": "nodemon  --ext 'ts' --exec 'deno run --allow-net --allow-env --allow-read server.ts'",
-    "compile": "deno compile --allow-net --allow-env --allow-read server.ts"
+    "dev": "deno run --allow-net --allow-env --allow-read --watch server.ts",
+    "start": "deno run --allow-net --allow-env --allow-read server.ts"
   }
 }

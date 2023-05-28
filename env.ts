@@ -9,7 +9,7 @@ const e = await load({ export: true });
 export const env = {
   DENO_ENV: e["DENO_ENV"] || "development",
 
-  APP_HOST: e["APP_HOST"] || "127.0.0.1",
+  APP_HOST: e["APP_HOST"] || "localhost",
   APP_PORT: Number(e["APP_PORT"] || 9000),
 
   POSTGRES_HOST: e["POSTGRES_HOST"] || "localhost",
@@ -22,7 +22,7 @@ export const env = {
 // Log Current Environment
 console.log(`Environment: [${env.DENO_ENV}]`);
 
-// SHorthand for checking if environment is development
+// Shorthand for checking if environment is development
 export const IS_DEV = env.DENO_ENV === "development";
 
 // export env

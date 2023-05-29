@@ -12,11 +12,37 @@ A simple Books App using Deno and Oak Framework
 ## Frontend
 - [vue-books-app](https://github.com/trapcodeio/vue-books-app)
 
-# Run
+
+# Setup
+By default this should work without an `env` file. If you want to change the default values, create a `.env` file in the root of the project.
+
+```bash
+# Create .env file
+cp .env.example .env
+```
+
+Then start the app.
+
 ```bash
 # Run the app and watch for changes
 deno task dev
 
 # Run the app
 deno task start
+```
+
+These commands can be found in the `deno.json` file.
+
+# Docker
+You can also run the app using Docker.
+The docker-compose file exists in `.docker` folder.
+
+```bash
+cd .docker
+
+# Build the app (only needed once)
+docker compose up --build -d
+
+# Run the app
+docker compose up -d
 ```

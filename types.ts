@@ -5,7 +5,7 @@ import { ApiBook } from "./database/repositories/books.repo.ts";
  * Expected Params
  */
 type Params = {
-  id?: string;
+    id?: string;
 };
 
 /**

@@ -1,4 +1,4 @@
-import {Client} from "postgres";
+import { Client } from "postgres";
 import env from "../env.ts";
 
 // initialize the database
@@ -7,7 +7,7 @@ const client = new Client({
     database: env.POSTGRES_DB,
     hostname: env.POSTGRES_HOST,
     port: env.POSTGRES_PORT,
-    password: env.POSTGRES_PASSWORD,
+    password: env.POSTGRES_PASSWORD
 });
 
 try {
@@ -15,7 +15,9 @@ try {
     await client.connect();
 
     // check if db table exists
-    const result = await client.queryArray(`SELECT * FROM pg_catalog.pg_tables WHERE tablename = '${env.POSTGRES_DB}'`);
+    const result = await client.queryArray(
+        `SELECT * FROM pg_catalog.pg_tables WHERE tablename = '${env.POSTGRES_DB}'`
+    );
 
     // if table does not exist
     if (result.rowCount === 0) {
@@ -33,7 +35,6 @@ try {
     // exit process
     Deno.exit(1);
 }
-
 
 // log database connection
 console.log(`Connected to database [${env.POSTGRES_DB}]`);

@@ -11,7 +11,7 @@ COPY . .
 USER deno
 RUN deno cache server.ts
 
-expose 9000
+EXPOSE 9000
 
 CMD ["deno", "task", "start"]
 

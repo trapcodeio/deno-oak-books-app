@@ -60,8 +60,13 @@ export class BooksRepository {
   /**
    * Get all books
    */
-  static async all(): Promise<ApiBook[]> {
-    const books = await client.queryObject<DbBook>("SELECT * FROM books");
+  static async all(search: string | null): Promise<ApiBook[]> {
+    let query: [string, string[]] = ["SELECT * FROM books", []];
+    if (search) {
+      query = ["SELECT * FROM books WHERE title ILIKE $1", [`%${search}%`]];
+    }
+
+    const books = await client.queryObject<DbBook>(query[0], query[1]);
     return books.rows.map((book) => this.toApiBook(book));
   }
 

@@ -1,5 +1,8 @@
-import {RouterContext} from "oak";
-import {BookForm, BooksRepository,} from "../database/repositories/books.repo.ts";
+import { RouterContext } from "oak";
+import {
+  BookForm,
+  BooksRepository,
+} from "../database/repositories/books.repo.ts";
 
 /**
  * Index - GET /
@@ -14,7 +17,10 @@ export function index(ctx: RouterContext<string>) {
  * Books - GET /books
  */
 export async function books(ctx: RouterContext<string>) {
-  ctx.response.body = await BooksRepository.all();
+  // get `title` from query parameters
+  const title = ctx.request.url.searchParams.get("title");
+
+  ctx.response.body = await BooksRepository.all(title);
 }
 
 /**
@@ -26,7 +32,6 @@ export async function create(ctx: RouterContext<string>) {
 
   // validate book form data
   await BooksRepository.validate(body);
-
 
   // send response
   ctx.response.body = await BooksRepository.create(body);

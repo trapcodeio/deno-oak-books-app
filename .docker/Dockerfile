@@ -1,5 +1,5 @@
-# dev stage
-FROM denoland/deno:alpine
+# Dev stage
+FROM denoland/deno:alpine AS dev
 
 WORKDIR /usr/src/app
 
@@ -15,4 +15,16 @@ EXPOSE 9000
 
 CMD ["deno", "task", "start"]
 
+# Prod stage
+FROM denoland/deno:alpine AS prod
 
+WORKDIR /usr/src/app
+
+COPY . .
+
+USER deno
+RUN deno cache server.ts
+
+EXPOSE 9000
+
+CMD ["deno", "task", "start"]

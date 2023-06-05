@@ -1,6 +1,6 @@
 # Deno Oak Books App
 
-A simple Books App using Deno and Oak Framework
+A simple Books App API using **Deno** and **Oak Framework**
 
 # Stack
 
@@ -14,7 +14,7 @@ A simple Books App using Deno and Oak Framework
 
 
 # Setup
-By default this should work without an `env` file. If you want to change the default values, create a `.env` file in the root of the project.
+By default, this should work without an `env` file. If you want to change the default values, create a `.env` file in the root of the project.
 
 ```bash
 # Create .env file

@@ -5,14 +5,14 @@ services:
     build:
       context: ./../
       dockerfile: .docker/Dockerfile
-    volumes:
-      - ./../:/usr/src/app
+      target: dev # or prod for production
     environment:
-      - DENO_ENV=development
       - POSTGRES_HOST=db # name of the "db" service
       - POSTGRES_DB=books
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=need-to-replace
+    volumes:
+      - ./../:/usr/src/app
     ports:
       - "9091:9000"
     depends_on:

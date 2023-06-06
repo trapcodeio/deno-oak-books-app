@@ -1,6 +1,9 @@
 # Dev stage
 FROM denoland/deno:alpine AS dev
 
+
+ENV DENO_ENV=development
+
 WORKDIR /usr/src/app
 
 # Needed for VS Code Remote Development
@@ -13,10 +16,12 @@ RUN deno cache server.ts
 
 EXPOSE 9000
 
-CMD ["deno", "task", "start"]
+CMD ["deno", "task", "dev"]
 
 # Prod stage
 FROM denoland/deno:alpine AS prod
+
+ENV DENO_ENV=production
 
 WORKDIR /usr/src/app
 

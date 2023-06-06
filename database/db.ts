@@ -1,4 +1,4 @@
-import { Client } from "postgres";
+import {Client} from "postgres";
 import env from "../env.ts";
 
 // initialize the database

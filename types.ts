@@ -1,5 +1,5 @@
-import type { RouterContext } from "oak";
-import { ApiBook } from "./database/repositories/books.repo.ts";
+import type {RouterContext} from "oak";
+import {ApiBook} from "./database/repositories/books.repo.ts";
 
 /**
  * Expected Params

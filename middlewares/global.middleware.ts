@@ -1,5 +1,5 @@
-import type { Context, Next } from "oak";
-import { IS_DEV } from "../env.ts";
+import type {Context, Next} from "oak";
+import {IS_DEV} from "../env.ts";
 import ApiError from "../controllers/error.ts";
 
 /**
@@ -10,7 +10,7 @@ export async function errorHandler(ctx: Context, next: Next) {
         await next();
     } catch (err) {
         let status = 500;
-        let body: Record<string, unknown> = { error: err.message };
+        let body: Record<string, unknown> = {error: err.message};
         const isApiError = err instanceof ApiError;
 
         // check if error is an instance of ApiError

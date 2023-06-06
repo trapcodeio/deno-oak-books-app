@@ -6,7 +6,7 @@ services:
       context: ./../
       dockerfile: .docker/Dockerfile
     volumes:
-       - ./../:/usr/src/app
+      - ./../:/usr/src/app
     environment:
       - DENO_ENV=development
       - POSTGRES_HOST=db # name of the "db" service

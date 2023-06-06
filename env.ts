@@ -1,7 +1,7 @@
-import { load } from "https://deno.land/std@0.188.0/dotenv/mod.ts";
+import {load} from "https://deno.land/std@0.188.0/dotenv/mod.ts";
 
 // load .env file
-await load({ export: true });
+await load({export: true});
 
 /**
  * Define and export ENVS

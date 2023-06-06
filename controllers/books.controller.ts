@@ -1,5 +1,5 @@
-import { RouterContext } from "oak";
-import { BookForm, BooksRepository } from "../database/repositories/books.repo.ts";
+import {RouterContext} from "oak";
+import {BookForm, BooksRepository} from "../database/repositories/books.repo.ts";
 
 /**
  * Index - GET /
@@ -71,7 +71,7 @@ export async function $delete(ctx: RouterContext<string>) {
     await BooksRepository.delete(book.id);
 
     // send response
-    ctx.response.body = { message: "Book deleted successfully" };
+    ctx.response.body = {message: "Book deleted successfully"};
 }
 
 /**
@@ -82,5 +82,5 @@ export async function deleteAll(ctx: RouterContext<string>) {
     const res = await BooksRepository.deleteAll();
 
     // send response
-    ctx.response.body = { message: `${res.rowCount} books deleted successfully` };
+    ctx.response.body = {message: `${res.rowCount} books deleted successfully`};
 }

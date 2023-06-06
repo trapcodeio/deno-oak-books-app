@@ -1,6 +1,6 @@
-import { Router } from "oak";
+import {Router} from "oak";
 import * as BooksController from "./controllers/books.controller.ts";
-import { loadBookId } from "./middlewares/params.middleware.ts";
+import {loadBookId} from "./middlewares/params.middleware.ts";
 
 const router = new Router();
 

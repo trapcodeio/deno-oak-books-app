@@ -19,8 +19,8 @@ A simple Books App API using **Deno** and **Oak Framework**
 Make sure you have Deno installed on your machine. If not, you can install it
 from [here](https://deno.land/#installation).
 
-By default, this should work without an `env` file. If you want to change the default values, create a `.env` file in
-the root of the project.
+By default, this should work without an `env` file. If you want to change the
+default values, create a `.env` file in the root of the project.
 
 ```bash
 # Create .env file
@@ -41,8 +41,8 @@ These commands can be found in the `deno.json` file.
 
 # Docker
 
-You can also run the app using Docker.
-The docker-compose file exists in `.docker` folder.
+You can also run the app using Docker. The docker-compose file exists in
+`.docker` folder.
 
 ```bash
 cd .docker

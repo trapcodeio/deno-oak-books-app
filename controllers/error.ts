@@ -16,7 +16,7 @@ export default class ApiError extends Error {
   }
 
   /**
-   * Convert ApiError to response object
+   * Convert ApiError to a response object
    */
   static toResponse(error: ApiError) {
     return { error: error.message, field: error.field };

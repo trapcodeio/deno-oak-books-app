@@ -33,6 +33,9 @@ Then start the app.
 # Run the app and watch for changes
 deno task dev
 
+# Run the app but debug it without watching for changes
+deno task debug
+
 # Run the app
 deno task start
 ```

@@ -6,6 +6,7 @@
   },
   "tasks": {
     "dev": "deno run --allow-net --allow-env --allow-read --watch server.ts",
+    "debug": "deno run --inspect-brk --allow-net --allow-env --allow-read server.ts",
     "start": "deno run --allow-net --allow-env --allow-read server.ts"
   }
 }
